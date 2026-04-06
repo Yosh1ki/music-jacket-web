@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbf8f2;
+  --foreground: #111111;
+  --font-body: "Avenir Next", "Hiragino Sans", "Yu Gothic UI", "Yu Gothic",
+    sans-serif;
+  --font-title: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+    Georgia, serif;
+  --font-app-ui: ui-rounded, -apple-system, BlinkMacSystemFont,
+    "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", sans-serif;
+  --font-coverpics-title: "Didot", "Bodoni 72", "Iowan Old Style",
+    "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --app-black: #171515;
+  --coverpics-title: rgb(255 76 76);
+  --app-panel-fill: rgba(255, 255, 255, 0.08);
+  --app-panel-highlight: rgba(255, 255, 255, 0.16);
+  --app-panel-border: rgba(255, 255, 255, 0.14);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-title);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    radial-gradient(circle at top, rgba(14, 116, 144, 0.08), transparent 34%),
+    linear-gradient(180deg, #fffcf8 0%, #fbf8f2 48%, #f5f2eb 100%);
 }
 
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.16);
 }
