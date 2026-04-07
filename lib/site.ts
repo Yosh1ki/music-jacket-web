@@ -3,7 +3,7 @@ export const siteConfig = {
   domain: "coverpics.app",
   url: "https://coverpics.app",
   description:
-    "お気に入りのカバー写真と一言をまとめてシェアできる、CoverPics の iOS プロフィール共有ページです。",
+    "好きな写真と曲をジャケ写みたいにして共有できるSNS、CoverPicsの紹介ページです。",
   supportEmail: "shirohebi.i@icloud.com",
   operatorName: "CoverPics Team",
   appStoreUrl: "https://apps.apple.com/app/idYOUR_APPLE_APP_ID",

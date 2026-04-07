@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
   path: "/",
-  title: "好きな曲と写真でつくるプロフィール共有",
+  title: "CoverPics : ジャケ写風写真投稿SNS",
 });
 
 const onboardingCopy = "好きな曲と写真を組み合わせ\n一つの作品にする";
@@ -38,13 +38,13 @@ const structuredData = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full bg-[var(--app-black)] text-white">
+    <main className="min-h-screen w-full bg-(--app-black) text-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <section className="mx-auto flex min-h-screen w-full max-w-[34rem] flex-col items-center px-6 pb-14 pt-12 md:max-w-[46rem] md:justify-center md:px-8 md:pb-20 md:pt-20">
-        <h1 className="[font-family:var(--font-coverpics-title)] text-center text-[clamp(4.1rem,16vw,5.7rem)] font-bold leading-[0.84] tracking-[-0.075em] text-[var(--coverpics-title)] [text-rendering:geometricPrecision]">
+      <section className="mx-auto flex min-h-screen w-full max-w-136 flex-col items-center px-6 pb-14 pt-12 md:max-w-184 md:justify-center md:px-8 md:pb-20 md:pt-20">
+        <h1 className="[font-family:var(--font-coverpics-title)] text-center text-[clamp(4.1rem,16vw,5.7rem)] font-bold leading-[0.84] tracking-[-0.075em] text-(--coverpics-title) [text-rendering:geometricPrecision]">
           CoverPics
         </h1>
 
@@ -57,7 +57,7 @@ export default function Home() {
         </p>
 
         <a
-          className="mt-10 inline-flex items-center gap-4 border border-[var(--app-panel-border)] bg-[var(--app-panel-fill)] px-5 py-4 text-white backdrop-blur-sm transition-colors duration-200 hover:bg-[var(--app-panel-highlight)]"
+          className="mt-10 inline-flex items-center gap-4 border border-(--app-panel-border) bg-(--app-panel-fill) px-5 py-4 text-white backdrop-blur-sm transition-colors duration-200 hover:bg-(--app-panel-highlight)"
           href={siteConfig.appStoreUrl}
           target="_blank"
           rel="noreferrer"
