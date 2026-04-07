@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { legalDocuments } from "@/lib/legal-documents";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
+  path: "/privacy",
   title: "プライバシーポリシー",
   description: "CoverPics のプライバシーポリシーです。",
-  alternates: {
-    canonical: "/privacy",
-  },
-};
+});
 
 const document = legalDocuments.privacy;
 

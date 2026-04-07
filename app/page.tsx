@@ -1,31 +1,52 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { OnboardingHeroCarousel } from "@/components/onboarding-hero-carousel";
+import { createPageMetadata, getDefaultOgImageUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    url: "/",
-    images: ["/opengraph-image"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: ["/opengraph-image"],
-  },
-};
+export const metadata: Metadata = createPageMetadata({
+  path: "/",
+  title: "好きな曲と写真でつくるプロフィール共有",
+});
 
 const onboardingCopy = "好きな曲と写真を組み合わせ\n一つの作品にする";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      inLanguage: "ja-JP",
+    },
+    {
+      "@type": "MobileApplication",
+      name: siteConfig.name,
+      operatingSystem: "iOS",
+      applicationCategory: "MusicApplication",
+      url: siteConfig.url,
+      image: getDefaultOgImageUrl(),
+      description: siteConfig.description,
+      publisher: {
+        "@type": "Organization",
+        name: siteConfig.operatorName,
+      },
+    },
+  ],
+};
 
 export default function Home() {
   return (
     <main className="min-h-screen w-full bg-[var(--app-black)] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="mx-auto flex min-h-screen w-full max-w-[34rem] flex-col items-center px-6 pb-14 pt-12 md:max-w-[46rem] md:justify-center md:px-8 md:pb-20 md:pt-20">
-        <p className="[font-family:var(--font-coverpics-title)] text-center text-[clamp(4.1rem,16vw,5.7rem)] font-bold leading-[0.84] tracking-[-0.075em] text-[var(--coverpics-title)] [text-rendering:geometricPrecision]">
+        <h1 className="[font-family:var(--font-coverpics-title)] text-center text-[clamp(4.1rem,16vw,5.7rem)] font-bold leading-[0.84] tracking-[-0.075em] text-[var(--coverpics-title)] [text-rendering:geometricPrecision]">
           CoverPics
-        </p>
+        </h1>
 
         <div className="mt-10 flex w-full justify-center md:mt-12">
           <OnboardingHeroCarousel />
@@ -60,6 +81,12 @@ export default function Home() {
         </a>
 
         <footer className="mt-16 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-t border-white/8 pt-6 text-[0.72rem] font-medium tracking-[0.18em] text-white/58 uppercase">
+          <Link
+            className="transition-colors duration-200 hover:text-white"
+            href="/support"
+          >
+            サポート
+          </Link>
           <Link
             className="transition-colors duration-200 hover:text-white"
             href="/terms"

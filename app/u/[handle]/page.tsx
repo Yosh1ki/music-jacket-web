@@ -6,6 +6,7 @@ import {
   getPublicProfileByHandle,
   listPublicProfileHandles,
 } from "@/lib/profiles";
+import { createPageMetadata } from "@/lib/seo";
 import { getProfileUrl, siteConfig } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -30,26 +31,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const profileUrl = getProfileUrl(profile.handle);
   const title = `${profile.displayName} (@${profile.handle})`;
 
-  return {
+  return createPageMetadata({
+    path: profileUrl,
     title,
     description: profile.bio,
-    alternates: {
-      canonical: `/u/${profile.handle}`,
-    },
-    openGraph: {
-      type: "website",
-      url: profileUrl,
-      title,
-      description: profile.bio,
-      images: [`/u/${profile.handle}/opengraph-image`],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description: profile.bio,
-      images: [`/u/${profile.handle}/opengraph-image`],
-    },
-  };
+    imagePath: `/u/${profile.handle}/opengraph-image`,
+  });
 }
 
 export default async function PublicProfilePage({ params }: Props) {

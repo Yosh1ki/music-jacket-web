@@ -62,7 +62,7 @@ export const legalDocuments = {
       },
       {
         title: "12. お問い合わせ",
-        body: "本規約に関するお問い合わせは、アプリ内の「お問い合わせ」窓口からご連絡ください。",
+        body: "本規約に関するお問い合わせは、公開サポートページ（https://coverpics.app/support）またはサポートメール（shirohebi.i@icloud.com）からご連絡ください。",
       },
     ],
   },
@@ -114,7 +114,7 @@ export const legalDocuments = {
       },
       {
         title: "11. お問い合わせ",
-        body: "本ポリシーに関するお問い合わせは、アプリ内の「お問い合わせ」窓口からご連絡ください。",
+        body: "本ポリシーに関するお問い合わせは、公開サポートページ（https://coverpics.app/support）またはサポートメール（shirohebi.i@icloud.com）からご連絡ください。",
       },
     ],
   },
