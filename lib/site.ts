@@ -6,7 +6,7 @@ export const siteConfig = {
     "好きな写真と曲をジャケ写みたいにして共有できるSNS、CoverPicsの紹介ページです。",
   supportEmail: "shirohebi.i@icloud.com",
   operatorName: "CoverPics Team",
-  appStoreUrl: "https://apps.apple.com/app/idYOUR_APPLE_APP_ID",
+  appStoreUrl: "https://apps.apple.com/us/app/coverpics/id6761432324",
   bundleId: "com.yoshiki.music-jacket",
   appIdentifier: "XMJ7UM8U3W.com.yoshiki.music-jacket",
 } as const;
