@@ -9,7 +9,7 @@ export const metadata: Metadata = createPageMetadata({
   title: "CoverPics : ジャケ写風写真投稿SNS",
 });
 
-const onboardingCopy = "好きな曲と写真を組み合わせ\n一つの作品にする";
+const onboardingCopy = "あなたの一枚に、\n思い出の曲を。";
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -52,7 +52,7 @@ export default function Home() {
           <OnboardingHeroCarousel />
         </div>
 
-        <p className="mt-8 whitespace-pre-line text-center [font-family:var(--font-app-ui)] text-[clamp(1.8rem,6vw,2.4rem)] font-bold leading-[1.18] tracking-[-0.05em] text-white md:mt-10">
+        <p className="mt-8 whitespace-pre-line text-center [font-family:var(--font-app-ui)] text-[clamp(1.65rem,5.5vw,2.2rem)] font-bold leading-[1.18] tracking-[-0.05em] text-white md:mt-10">
           {onboardingCopy}
         </p>
 
